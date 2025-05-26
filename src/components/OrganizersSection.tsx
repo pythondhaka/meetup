@@ -7,14 +7,14 @@ export const OrganizersSection = () => {
   const organizers = [
     {
       name: "Tamal Anwar Chowdhury",
-      title: "Technical Docs Writer at Kinde Australia PT, Tech Educator",
+      title: "Technical Docs Writer at Kinde.com, Tech Educator",
       roles: ["Organizer, Python Bangladesh", "Co-organizer Python Bangladesh"],
       icon: User
     },
     {
       name: "Md. Taufiqul Haque Khan Tusar",
       title: "NLP & Backend Engineer at LaLoka Labs",
-      roles: ["Organizer, AI/ML community Bangladesh", "Co-organizer Python Bangladesh"],
+      roles: ["Organizer, AI/ML community BD", "Co-organizer Python Bangladesh"],
       icon: User
     }
   ];
