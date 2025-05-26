@@ -40,7 +40,7 @@ export const HeroSection = () => {
           
           {/* Main Title */}
           <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
-            Python <span className="text-python-yellow">Bangladesh</span>
+            Python Bangladesh <span className="text-python-yellow">Meetup</span>
           </h1>
           
           {/* Subtitle */}
