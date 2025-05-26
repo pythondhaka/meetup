@@ -10,17 +10,31 @@ import { OrganizersSection } from "@/components/OrganizersSection";
 import { SponsorsSection } from "@/components/SponsorsSection";
 import { VenueSection } from "@/components/VenueSection";
 import { FooterSection } from "@/components/FooterSection";
+import { BackToTop } from "@/components/BackToTop";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-yellow-50">
-      <HeroSection />
-      <AboutSection />
-      <SpeakersSection />
-      <OrganizersSection />
-      <SponsorsSection />
-      <VenueSection />
+      <div id="register">
+        <HeroSection />
+      </div>
+      <div id="about">
+        <AboutSection />
+      </div>
+      <div id="speakers">
+        <SpeakersSection />
+      </div>
+      <div id="organizers">
+        <OrganizersSection />
+      </div>
+      <div id="sponsors">
+        <SponsorsSection />
+      </div>
+      <div id="venue">
+        <VenueSection />
+      </div>
       <FooterSection />
+      <BackToTop />
     </div>
   );
 };

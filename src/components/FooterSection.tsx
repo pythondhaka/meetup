@@ -2,6 +2,13 @@
 import { Button } from "@/components/ui/button";
 
 export const FooterSection = () => {
+  const handleSmoothScroll = (elementId: string) => {
+    const element = document.getElementById(elementId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <footer className="bg-gradient-to-br from-slate-900 via-python-blue-dark to-python-blue text-white">
       <div className="container mx-auto px-4 py-16">
@@ -25,11 +32,54 @@ export const FooterSection = () => {
           <div>
             <h4 className="text-xl font-semibold mb-4 text-python-yellow">Quick Links</h4>
             <ul className="space-y-2 text-blue-100">
-              <li><a href="#register" className="hover:text-python-yellow transition-colors">Register for Event</a></li>
-              <li><a href="#speakers" className="hover:text-python-yellow transition-colors">Call for Speakers</a></li>
-              <li><a href="#sponsors" className="hover:text-python-yellow transition-colors">Sponsorship Opportunities</a></li>
-              <li><a href="#venue" className="hover:text-python-yellow transition-colors">Venue Information</a></li>
-              <li><a href="#about" className="hover:text-python-yellow transition-colors">About the Event</a></li>
+              <li>
+                <button 
+                  onClick={() => handleSmoothScroll('register')} 
+                  className="hover:text-python-yellow transition-colors cursor-pointer text-left"
+                >
+                  Register for Event
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => handleSmoothScroll('speakers')} 
+                  className="hover:text-python-yellow transition-colors cursor-pointer text-left"
+                >
+                  Call for Speakers
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => handleSmoothScroll('sponsors')} 
+                  className="hover:text-python-yellow transition-colors cursor-pointer text-left"
+                >
+                  Sponsorship Opportunities
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => handleSmoothScroll('venue')} 
+                  className="hover:text-python-yellow transition-colors cursor-pointer text-left"
+                >
+                  Venue Information
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => handleSmoothScroll('about')} 
+                  className="hover:text-python-yellow transition-colors cursor-pointer text-left"
+                >
+                  About the Event
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => handleSmoothScroll('organizers')} 
+                  className="hover:text-python-yellow transition-colors cursor-pointer text-left"
+                >
+                  Event Organizers
+                </button>
+              </li>
             </ul>
           </div>
 
@@ -39,25 +89,47 @@ export const FooterSection = () => {
             <p className="text-blue-100 mb-4 text-sm">
               Stay connected with Bangladesh's Python community through our various channels:
             </p>
-            <div className="space-y-3">
-              <Button 
-                variant="outline" 
-                className="w-full border-python-yellow text-python-yellow hover:bg-python-yellow hover:text-python-blue-dark transition-all"
-              >
-                🎮 Join Discord Server
-              </Button>
-              <Button 
-                variant="outline" 
-                className="w-full border-python-yellow text-python-yellow hover:bg-python-yellow hover:text-python-blue-dark transition-all"
-              >
-                📘 Python Bangladesh FB Group
-              </Button>
-              <Button 
-                variant="outline" 
-                className="w-full border-python-yellow text-python-yellow hover:bg-python-yellow hover:text-python-blue-dark transition-all"
-              >
-                💼 LinkedIn Page
-              </Button>
+            <div className="space-y-3 text-blue-100">
+              <div>
+                <a 
+                  href="https://discord.gg/F8Zdgd4fgB" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-python-yellow transition-colors flex items-center"
+                >
+                  🎮 Join our Discord
+                </a>
+              </div>
+              <div>
+                <a 
+                  href="https://www.facebook.com/groups/pythondhaka/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-python-yellow transition-colors flex items-center"
+                >
+                  📘 Join our Facebook group
+                </a>
+              </div>
+              <div>
+                <a 
+                  href="https://www.linkedin.com/company/python-bangladesh/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-python-yellow transition-colors flex items-center"
+                >
+                  💼 Follow our LinkedIn page
+                </a>
+              </div>
+              <div>
+                <a 
+                  href="https://whatsapp.com/channel/0029VbAf0s70rGiMzJfG4u2B" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-python-yellow transition-colors flex items-center"
+                >
+                  📱 Follow our WhatsApp channel
+                </a>
+              </div>
             </div>
           </div>
         </div>
