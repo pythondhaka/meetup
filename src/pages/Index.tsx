@@ -6,6 +6,7 @@ import { Calendar, Clock, MapPin, Users, Mic, Building2 } from "lucide-react";
 import { HeroSection } from "@/components/HeroSection";
 import { AboutSection } from "@/components/AboutSection";
 import { SpeakersSection } from "@/components/SpeakersSection";
+import { OrganizersSection } from "@/components/OrganizersSection";
 import { SponsorsSection } from "@/components/SponsorsSection";
 import { VenueSection } from "@/components/VenueSection";
 import { FooterSection } from "@/components/FooterSection";
@@ -16,6 +17,7 @@ const Index = () => {
       <HeroSection />
       <AboutSection />
       <SpeakersSection />
+      <OrganizersSection />
       <SponsorsSection />
       <VenueSection />
       <FooterSection />

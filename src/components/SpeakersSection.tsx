@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -8,22 +7,22 @@ export const SpeakersSection = () => {
   const speakingSlots = [
     {
       title: "Keynote Speaker",
-      duration: "45 minutes",
+      duration: "18 minutes",
       description: "Opening keynote on the future of Python in Bangladesh's tech ecosystem"
     },
     {
       title: "Technical Deep Dive",
-      duration: "30 minutes", 
+      duration: "18 minutes", 
       description: "Advanced Python concepts, frameworks, or emerging technologies"
     },
     {
       title: "Community Spotlight",
-      duration: "20 minutes",
+      duration: "18 minutes",
       description: "Python projects making impact in Bangladesh or open source contributions"
     },
     {
       title: "Lightning Talk",
-      duration: "10 minutes",
+      duration: "18 minutes",
       description: "Quick insights, tips, or project showcases from community members"
     }
   ];

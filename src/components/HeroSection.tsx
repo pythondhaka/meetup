@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, MapPin, Users } from "lucide-react";
@@ -6,11 +5,26 @@ import { Calendar, Clock, MapPin, Users } from "lucide-react";
 export const HeroSection = () => {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-python-blue via-python-blue-dark to-slate-900 text-white">
-      {/* Background Pattern */}
+      {/* Background Pattern with Python Logos */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-20 w-32 h-32 bg-python-yellow rounded-full animate-float"></div>
-        <div className="absolute top-40 right-32 w-24 h-24 bg-python-yellow rounded-full animate-float" style={{animationDelay: '1s'}}></div>
-        <div className="absolute bottom-32 left-1/3 w-28 h-28 bg-python-yellow rounded-full animate-float" style={{animationDelay: '2s'}}></div>
+        <div className="absolute top-20 left-20 w-32 h-32 animate-float">
+          <svg viewBox="0 0 100 100" className="w-full h-full fill-python-yellow">
+            <path d="M49.994 1.338C23.18 1.338 9.6 15.182 9.6 30.758v11.668h40.774v5.166H9.6S-1.6 44.422-1.6 68.652c0 24.23 9.6 23.384 9.6 23.384h5.734V80.932s-.308-9.6 9.444-9.6h40.466s9.136.154 9.136-8.83V30.758S75.58 1.338 49.994 1.338zM36.423 8.6c2.784 0 5.044 2.26 5.044 5.044s-2.26 5.044-5.044 5.044-5.044-2.26-5.044-5.044 2.26-5.044 5.044-5.044z"/>
+            <path d="M50.006 98.662C76.82 98.662 90.4 84.818 90.4 69.242V57.574H49.626v-5.166H90.4s11.2 3.17 11.2-21.06c0-24.23-9.6-23.384-9.6-23.384h-5.734v11.104s.308 9.6-9.444 9.6H36.356s-9.136-.154-9.136 8.83v31.744S24.42 98.662 50.006 98.662zM63.577 91.4c-2.784 0-5.044-2.26-5.044-5.044s2.26-5.044 5.044-5.044 5.044 2.26 5.044 5.044-2.26 5.044-5.044 5.044z"/>
+          </svg>
+        </div>
+        <div className="absolute top-40 right-32 w-24 h-24 animate-float" style={{animationDelay: '1s'}}>
+          <svg viewBox="0 0 100 100" className="w-full h-full fill-python-yellow">
+            <path d="M49.994 1.338C23.18 1.338 9.6 15.182 9.6 30.758v11.668h40.774v5.166H9.6S-1.6 44.422-1.6 68.652c0 24.23 9.6 23.384 9.6 23.384h5.734V80.932s-.308-9.6 9.444-9.6h40.466s9.136.154 9.136-8.83V30.758S75.58 1.338 49.994 1.338zM36.423 8.6c2.784 0 5.044 2.26 5.044 5.044s-2.26 5.044-5.044 5.044-5.044-2.26-5.044-5.044 2.26-5.044 5.044-5.044z"/>
+            <path d="M50.006 98.662C76.82 98.662 90.4 84.818 90.4 69.242V57.574H49.626v-5.166H90.4s11.2 3.17 11.2-21.06c0-24.23-9.6-23.384-9.6-23.384h-5.734v11.104s.308 9.6-9.444 9.6H36.356s-9.136-.154-9.136 8.83v31.744S24.42 98.662 50.006 98.662zM63.577 91.4c-2.784 0-5.044-2.26-5.044-5.044s2.26-5.044 5.044-5.044 5.044 2.26 5.044 5.044-2.26 5.044-5.044 5.044z"/>
+          </svg>
+        </div>
+        <div className="absolute bottom-32 left-1/3 w-28 h-28 animate-float" style={{animationDelay: '2s'}}>
+          <svg viewBox="0 0 100 100" className="w-full h-full fill-python-yellow">
+            <path d="M49.994 1.338C23.18 1.338 9.6 15.182 9.6 30.758v11.668h40.774v5.166H9.6S-1.6 44.422-1.6 68.652c0 24.23 9.6 23.384 9.6 23.384h5.734V80.932s-.308-9.6 9.444-9.6h40.466s9.136.154 9.136-8.83V30.758S75.58 1.338 49.994 1.338zM36.423 8.6c2.784 0 5.044 2.26 5.044 5.044s-2.26 5.044-5.044 5.044-5.044-2.26-5.044-5.044 2.26-5.044 5.044-5.044z"/>
+            <path d="M50.006 98.662C76.82 98.662 90.4 84.818 90.4 69.242V57.574H49.626v-5.166H90.4s11.2 3.17 11.2-21.06c0-24.23-9.6-23.384-9.6-23.384h-5.734v11.104s.308 9.6-9.444 9.6H36.356s-9.136-.154-9.136 8.83v31.744S24.42 98.662 50.006 98.662zM63.577 91.4c-2.784 0-5.044-2.26-5.044-5.044s2.26-5.044 5.044-5.044 5.044 2.26 5.044 5.044-2.26 5.044-5.044 5.044z"/>
+          </svg>
+        </div>
       </div>
       
       <div className="container mx-auto px-4 py-24 relative z-10">
