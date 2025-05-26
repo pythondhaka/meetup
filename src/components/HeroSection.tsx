@@ -1,34 +1,46 @@
-
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, MapPin, Users } from "lucide-react";
+import { Navigation } from "./Navigation";
 
 export const HeroSection = () => {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-python-blue via-python-blue-dark to-slate-900 text-white">
-      {/* Background Pattern with Python Logos */}
+      <Navigation />
+      
+      {/* Background Pattern with Python Snake Shapes */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-20 w-32 h-32 animate-float">
-          <svg viewBox="0 0 100 100" className="w-full h-full fill-python-yellow">
-            <path d="M49.994 1.338C23.18 1.338 9.6 15.182 9.6 30.758v11.668h40.774v5.166H9.6S-1.6 44.422-1.6 68.652c0 24.23 9.6 23.384 9.6 23.384h5.734V80.932s-.308-9.6 9.444-9.6h40.466s9.136.154 9.136-8.83V30.758S75.58 1.338 49.994 1.338zM36.423 8.6c2.784 0 5.044 2.26 5.044 5.044s-2.26 5.044-5.044 5.044-5.044-2.26-5.044-5.044 2.26-5.044 5.044-5.044z"/>
-            <path d="M50.006 98.662C76.82 98.662 90.4 84.818 90.4 69.242V57.574H49.626v-5.166H90.4s11.2 3.17 11.2-21.06c0-24.23-9.6-23.384-9.6-23.384h-5.734v11.104s.308 9.6-9.444 9.6H36.356s-9.136-.154-9.136 8.83v31.744S24.42 98.662 50.006 98.662zM63.577 91.4c-2.784 0-5.044-2.26-5.044-5.044s2.26-5.044 5.044-5.044 5.044 2.26 5.044 5.044-2.26 5.044-5.044 5.044z"/>
+          <svg viewBox="0 0 200 200" className="w-full h-full fill-python-yellow">
+            <path d="M40 120 Q60 100 80 120 Q100 140 120 120 Q140 100 160 120 Q170 130 160 140 Q140 160 120 140 Q100 120 80 140 Q60 160 40 140 Q30 130 40 120 Z" />
+            <circle cx="50" cy="115" r="3" className="fill-python-blue-dark" />
+            <path d="M160 120 Q180 110 200 130" stroke="currentColor" strokeWidth="4" fill="none" strokeLinecap="round" />
           </svg>
         </div>
         <div className="absolute top-40 right-32 w-24 h-24 animate-float" style={{animationDelay: '1s'}}>
-          <svg viewBox="0 0 100 100" className="w-full h-full fill-python-yellow">
-            <path d="M49.994 1.338C23.18 1.338 9.6 15.182 9.6 30.758v11.668h40.774v5.166H9.6S-1.6 44.422-1.6 68.652c0 24.23 9.6 23.384 9.6 23.384h5.734V80.932s-.308-9.6 9.444-9.6h40.466s9.136.154 9.136-8.83V30.758S75.58 1.338 49.994 1.338zM36.423 8.6c2.784 0 5.044 2.26 5.044 5.044s-2.26 5.044-5.044 5.044-5.044-2.26-5.044-5.044 2.26-5.044 5.044-5.044z"/>
-            <path d="M50.006 98.662C76.82 98.662 90.4 84.818 90.4 69.242V57.574H49.626v-5.166H90.4s11.2 3.17 11.2-21.06c0-24.23-9.6-23.384-9.6-23.384h-5.734v11.104s.308 9.6-9.444 9.6H36.356s-9.136-.154-9.136 8.83v31.744S24.42 98.662 50.006 98.662zM63.577 91.4c-2.784 0-5.044-2.26-5.044-5.044s2.26-5.044 5.044-5.044 5.044 2.26 5.044 5.044-2.26 5.044-5.044 5.044z"/>
+          <svg viewBox="0 0 200 200" className="w-full h-full fill-python-yellow">
+            <path d="M60 100 Q80 80 100 100 Q120 120 140 100 Q150 110 140 120 Q120 140 100 120 Q80 100 60 120 Q50 110 60 100 Z" />
+            <circle cx="70" cy="95" r="2.5" className="fill-python-blue-dark" />
+            <path d="M140 100 Q160 90 180 110" stroke="currentColor" strokeWidth="3" fill="none" strokeLinecap="round" />
           </svg>
         </div>
         <div className="absolute bottom-32 left-1/3 w-28 h-28 animate-float" style={{animationDelay: '2s'}}>
-          <svg viewBox="0 0 100 100" className="w-full h-full fill-python-yellow">
-            <path d="M49.994 1.338C23.18 1.338 9.6 15.182 9.6 30.758v11.668h40.774v5.166H9.6S-1.6 44.422-1.6 68.652c0 24.23 9.6 23.384 9.6 23.384h5.734V80.932s-.308-9.6 9.444-9.6h40.466s9.136.154 9.136-8.83V30.758S75.58 1.338 49.994 1.338zM36.423 8.6c2.784 0 5.044 2.26 5.044 5.044s-2.26 5.044-5.044 5.044-5.044-2.26-5.044-5.044 2.26-5.044 5.044-5.044z"/>
-            <path d="M50.006 98.662C76.82 98.662 90.4 84.818 90.4 69.242V57.574H49.626v-5.166H90.4s11.2 3.17 11.2-21.06c0-24.23-9.6-23.384-9.6-23.384h-5.734v11.104s.308 9.6-9.444 9.6H36.356s-9.136-.154-9.136 8.83v31.744S24.42 98.662 50.006 98.662zM63.577 91.4c-2.784 0-5.044-2.26-5.044-5.044s2.26-5.044 5.044-5.044 5.044 2.26 5.044 5.044-2.26 5.044-5.044 5.044z"/>
+          <svg viewBox="0 0 200 200" className="w-full h-full fill-python-yellow">
+            <path d="M50 110 Q70 90 90 110 Q110 130 130 110 Q150 90 170 110 Q180 120 170 130 Q150 150 130 130 Q110 110 90 130 Q70 150 50 130 Q40 120 50 110 Z" />
+            <circle cx="60" cy="105" r="3.5" className="fill-python-blue-dark" />
+            <path d="M170 110 Q190 100 210 120" stroke="currentColor" strokeWidth="4" fill="none" strokeLinecap="round" />
+          </svg>
+        </div>
+        <div className="absolute top-60 left-2/3 w-20 h-20 animate-float" style={{animationDelay: '3s'}}>
+          <svg viewBox="0 0 200 200" className="w-full h-full fill-python-yellow">
+            <path d="M70 120 Q90 100 110 120 Q130 140 150 120 Q160 130 150 140 Q130 160 110 140 Q90 120 70 140 Q60 130 70 120 Z" />
+            <circle cx="80" cy="115" r="2" className="fill-python-blue-dark" />
+            <path d="M150 120 Q170 110 190 130" stroke="currentColor" strokeWidth="3" fill="none" strokeLinecap="round" />
           </svg>
         </div>
       </div>
       
-      <div className="container mx-auto px-4 py-24 relative z-10">
+      <div className="container mx-auto px-4 py-24 pt-32 relative z-10">
         <div className="text-center max-w-4xl mx-auto">
           {/* Event Badge */}
           <Badge className="mb-6 bg-python-yellow text-python-blue-dark hover:bg-python-yellow-dark text-lg px-4 py-2">
