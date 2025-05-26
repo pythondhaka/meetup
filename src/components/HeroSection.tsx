@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, MapPin, Users } from "lucide-react";
@@ -36,7 +37,7 @@ export const HeroSection = () => {
           
           {/* Main Title */}
           <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
-            Python <span className="text-python-yellow">Dhaka</span>
+            Python <span className="text-python-yellow">Bangladesh</span>
           </h1>
           
           {/* Subtitle */}

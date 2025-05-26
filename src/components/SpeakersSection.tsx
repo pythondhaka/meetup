@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -22,8 +23,8 @@ export const SpeakersSection = () => {
     },
     {
       title: "Lightning Talk",
-      duration: "18 minutes",
-      description: "Quick insights, tips, or project showcases from community members"
+      duration: "5 minutes",
+      description: "Quick insights, tips, or project showcases from community members (multiple slots available)"
     }
   ];
 
@@ -39,7 +40,7 @@ export const SpeakersSection = () => {
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
             We're looking for passionate speakers to share their knowledge, experiences, and insights 
-            with the Python Dhaka community. Whether you're a seasoned developer or just starting out, 
+            with the Python Bangladesh community. Whether you're a seasoned developer or just starting out, 
             we want to hear your story.
           </p>
           

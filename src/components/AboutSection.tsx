@@ -31,10 +31,10 @@ export const AboutSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Why <span className="text-python-blue">Python Dhaka?</span>
+            Why <span className="text-python-blue">Python Bangladesh?</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Python Dhaka is Bangladesh's premier Python community event, bringing together developers, 
+            Python Bangladesh is Bangladesh's premier Python community event, bringing together developers, 
             data scientists, and tech enthusiasts for an afternoon of learning, networking, and inspiration. 
             Join us for 3 hours of amazing talks, hands-on workshops, and meaningful connections.
           </p>

@@ -15,7 +15,7 @@ export const FooterSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Brand & Event Info */}
           <div>
-            <h3 className="text-3xl font-bold mb-4">Python <span className="text-python-yellow">Dhaka</span></h3>
+            <h3 className="text-3xl font-bold mb-4">Python <span className="text-python-yellow">Bangladesh</span></h3>
             <p className="text-blue-100 mb-4 leading-relaxed">
               Bangladesh's premier Python community event bringing together developers, 
               data scientists, and tech enthusiasts for learning and networking.
@@ -42,10 +42,26 @@ export const FooterSection = () => {
               </li>
               <li>
                 <button 
+                  onClick={() => handleSmoothScroll('about')} 
+                  className="hover:text-python-yellow transition-colors cursor-pointer text-left"
+                >
+                  About the Event
+                </button>
+              </li>
+              <li>
+                <button 
                   onClick={() => handleSmoothScroll('speakers')} 
                   className="hover:text-python-yellow transition-colors cursor-pointer text-left"
                 >
                   Call for Speakers
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => handleSmoothScroll('organizers')} 
+                  className="hover:text-python-yellow transition-colors cursor-pointer text-left"
+                >
+                  Event Organizers
                 </button>
               </li>
               <li>
@@ -64,22 +80,6 @@ export const FooterSection = () => {
                   Venue Information
                 </button>
               </li>
-              <li>
-                <button 
-                  onClick={() => handleSmoothScroll('about')} 
-                  className="hover:text-python-yellow transition-colors cursor-pointer text-left"
-                >
-                  About the Event
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => handleSmoothScroll('organizers')} 
-                  className="hover:text-python-yellow transition-colors cursor-pointer text-left"
-                >
-                  Event Organizers
-                </button>
-              </li>
             </ul>
           </div>
 
@@ -95,9 +95,9 @@ export const FooterSection = () => {
                   href="https://discord.gg/F8Zdgd4fgB" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="hover:text-python-yellow transition-colors flex items-center"
+                  className="hover:text-python-yellow transition-colors"
                 >
-                  🎮 Join our Discord
+                  Join our Discord
                 </a>
               </div>
               <div>
@@ -105,9 +105,9 @@ export const FooterSection = () => {
                   href="https://www.facebook.com/groups/pythondhaka/" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="hover:text-python-yellow transition-colors flex items-center"
+                  className="hover:text-python-yellow transition-colors"
                 >
-                  📘 Join our Facebook group
+                  Join our Facebook group
                 </a>
               </div>
               <div>
@@ -115,9 +115,9 @@ export const FooterSection = () => {
                   href="https://www.linkedin.com/company/python-bangladesh/" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="hover:text-python-yellow transition-colors flex items-center"
+                  className="hover:text-python-yellow transition-colors"
                 >
-                  💼 Follow our LinkedIn page
+                  Follow our LinkedIn page
                 </a>
               </div>
               <div>
@@ -125,9 +125,9 @@ export const FooterSection = () => {
                   href="https://whatsapp.com/channel/0029VbAf0s70rGiMzJfG4u2B" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="hover:text-python-yellow transition-colors flex items-center"
+                  className="hover:text-python-yellow transition-colors"
                 >
-                  📱 Follow our WhatsApp channel
+                  Follow our WhatsApp channel
                 </a>
               </div>
             </div>
@@ -138,7 +138,7 @@ export const FooterSection = () => {
         <div className="border-t border-blue-700 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-blue-200 text-sm mb-4 md:mb-0">
-              <p>&copy; 2025 Python Dhaka Community. Made with 🐍 and ❤️ in Bangladesh.</p>
+              <p>&copy; 2025 Python Bangladesh Community. Made with 🐍 and ❤️ in Bangladesh.</p>
             </div>
             <div className="flex space-x-6 text-sm text-blue-200">
               <a href="#" className="hover:text-python-yellow transition-colors">Code of Conduct</a>
