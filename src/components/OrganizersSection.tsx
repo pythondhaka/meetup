@@ -8,7 +8,7 @@ export const OrganizersSection = () => {
     {
       name: "Tamal Anwar Chowdhury",
       title: "Technical Docs Writer at Kinde.com, Tech Educator",
-      roles: ["Organizer, Python Bangladesh", "Co-organizer Python Bangladesh"],
+      roles: ["Organizer, Python Dhaka", "Co-organizer Python Bangladesh"],
       icon: User
     },
     {
