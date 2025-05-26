@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Menu, X } from "lucide-react";
@@ -7,6 +7,8 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("register");
 
   const navItems = [
     { href: "#register", label: "Register" },
@@ -17,6 +19,30 @@ export const Navigation = () => {
     { href: "#venue", label: "Venue" },
   ];
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+      
+      // Find active section
+      const sections = navItems.map(item => item.href.slice(1));
+      const currentSection = sections.find(section => {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          return rect.top <= 100 && rect.bottom >= 100;
+        }
+        return false;
+      });
+      
+      if (currentSection) {
+        setActiveSection(currentSection);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
@@ -25,31 +51,46 @@ export const Navigation = () => {
     setIsOpen(false);
   };
 
+  const navClass = isScrolled 
+    ? "fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b shadow-sm transition-all duration-300"
+    : "fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-none transition-all duration-300";
+
+  const linkClass = isScrolled 
+    ? "text-gray-700 hover:text-python-blue transition-colors font-medium"
+    : "text-white hover:text-python-yellow transition-colors font-medium";
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b shadow-sm">
+    <nav className={navClass}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <Badge className="bg-python-yellow text-python-blue-dark hover:bg-python-yellow-dark">
-              🐍 Python Bangladesh
+            <Badge className={`${isScrolled ? 'bg-python-yellow text-python-blue-dark' : 'bg-python-yellow text-python-blue-dark'} hover:bg-python-yellow-dark`}>
+              Python Bangladesh
             </Badge>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <button
-                key={item.href}
-                onClick={() => scrollToSection(item.href)}
-                className="text-gray-700 hover:text-python-blue transition-colors font-medium"
-              >
-                {item.label}
-              </button>
-            ))}
+            {navItems.map((item) => {
+              const sectionId = item.href.slice(1);
+              const isActive = activeSection === sectionId;
+              return (
+                <button
+                  key={item.href}
+                  onClick={() => scrollToSection(item.href)}
+                  className={`${linkClass} ${isActive ? 'text-python-yellow' : ''} relative`}
+                >
+                  {item.label}
+                  {isActive && (
+                    <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-python-yellow"></div>
+                  )}
+                </button>
+              );
+            })}
             <Button 
               size="sm" 
-              className="bg-python-blue hover:bg-python-blue-dark text-white"
+              className="bg-python-yellow hover:bg-python-yellow-dark text-python-blue-dark"
               onClick={() => scrollToSection("#register")}
             >
               Register Now
@@ -61,7 +102,7 @@ export const Navigation = () => {
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="sm">
-                  <Menu className="h-5 w-5" />
+                  <Menu className={`h-5 w-5 ${isScrolled ? 'text-gray-700' : 'text-white'}`} />
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-[300px]">
@@ -69,17 +110,21 @@ export const Navigation = () => {
                   <div className="text-lg font-semibold text-python-blue mb-4">
                     Python Bangladesh
                   </div>
-                  {navItems.map((item) => (
-                    <button
-                      key={item.href}
-                      onClick={() => scrollToSection(item.href)}
-                      className="text-left py-2 px-4 text-gray-700 hover:text-python-blue hover:bg-python-blue/10 rounded transition-colors"
-                    >
-                      {item.label}
-                    </button>
-                  ))}
+                  {navItems.map((item) => {
+                    const sectionId = item.href.slice(1);
+                    const isActive = activeSection === sectionId;
+                    return (
+                      <button
+                        key={item.href}
+                        onClick={() => scrollToSection(item.href)}
+                        className={`text-left py-2 px-4 text-gray-700 hover:text-python-blue hover:bg-python-blue/10 rounded transition-colors ${isActive ? 'text-python-blue bg-python-yellow/20' : ''}`}
+                      >
+                        {item.label}
+                      </button>
+                    );
+                  })}
                   <Button 
-                    className="bg-python-blue hover:bg-python-blue-dark text-white mt-4"
+                    className="bg-python-yellow hover:bg-python-yellow-dark text-python-blue-dark mt-4"
                     onClick={() => scrollToSection("#register")}
                   >
                     Register Now
