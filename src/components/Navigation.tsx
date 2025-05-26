@@ -52,12 +52,12 @@ export const Navigation = () => {
   };
 
   const navClass = isScrolled 
-    ? "fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b shadow-sm transition-all duration-300"
+    ? "fixed top-0 left-0 right-0 z-50 bg-white/20 backdrop-blur-md border-b border-white/20 shadow-sm transition-all duration-300"
     : "fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-none transition-all duration-300";
 
   const linkClass = isScrolled 
-    ? "text-gray-700 hover:text-python-blue transition-colors font-medium"
-    : "text-white hover:text-python-yellow transition-colors font-medium";
+    ? "text-gray-800 hover:text-python-blue transition-all duration-300 font-medium"
+    : "text-white hover:text-python-yellow transition-all duration-300 font-medium";
 
   return (
     <nav className={navClass}>
@@ -79,12 +79,13 @@ export const Navigation = () => {
                 <button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
-                  className={`${linkClass} ${isActive ? 'text-python-yellow' : ''} relative`}
+                  className={`${linkClass} ${isActive ? 'text-python-yellow' : ''} relative transition-all duration-500`}
+                  style={isActive ? {
+                    textShadow: '0 0 10px #fbbf24, 0 0 20px #fbbf24, 0 0 30px #fbbf24',
+                    filter: 'brightness(1.2)'
+                  } : {}}
                 >
                   {item.label}
-                  {isActive && (
-                    <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-python-yellow"></div>
-                  )}
                 </button>
               );
             })}
@@ -105,7 +106,7 @@ export const Navigation = () => {
                   <Menu className={`h-5 w-5 ${isScrolled ? 'text-gray-700' : 'text-white'}`} />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px]">
+              <SheetContent side="right" className="w-[300px] bg-white/95 backdrop-blur-md">
                 <div className="flex flex-col space-y-4 mt-8">
                   <div className="text-lg font-semibold text-python-blue mb-4">
                     Python Bangladesh
@@ -117,7 +118,11 @@ export const Navigation = () => {
                       <button
                         key={item.href}
                         onClick={() => scrollToSection(item.href)}
-                        className={`text-left py-2 px-4 text-gray-700 hover:text-python-blue hover:bg-python-blue/10 rounded transition-colors ${isActive ? 'text-python-blue bg-python-yellow/20' : ''}`}
+                        className={`text-left py-2 px-4 text-gray-700 hover:text-python-blue hover:bg-python-blue/10 rounded transition-all duration-500 ${isActive ? 'text-python-yellow bg-python-yellow/20' : ''}`}
+                        style={isActive ? {
+                          textShadow: '0 0 8px #fbbf24, 0 0 16px #fbbf24',
+                          filter: 'brightness(1.2)'
+                        } : {}}
                       >
                         {item.label}
                       </button>
