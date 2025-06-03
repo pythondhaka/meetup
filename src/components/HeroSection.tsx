@@ -1,10 +1,13 @@
-
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, MapPin, Users } from "lucide-react";
 import { Navigation } from "./Navigation";
+import { RegistrationForm } from "./RegistrationForm";
 
 export const HeroSection = () => {
+  const [isRegistrationOpen, setIsRegistrationOpen] = useState(false);
+
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-python-blue via-python-blue-dark to-slate-900 text-white">
       <Navigation />
@@ -77,6 +80,7 @@ export const HeroSection = () => {
             <Button 
               size="lg" 
               className="bg-python-yellow text-python-blue-dark hover:bg-python-yellow-dark font-bold px-8 py-4 text-lg transition-all transform hover:scale-105"
+              onClick={() => setIsRegistrationOpen(true)}
             >
               Register Now - ৳300
             </Button>
@@ -95,6 +99,12 @@ export const HeroSection = () => {
           <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" className="fill-slate-50"></path>
         </svg>
       </div>
+      
+      {/* Registration Modal */}
+      <RegistrationForm 
+        open={isRegistrationOpen} 
+        onOpenChange={setIsRegistrationOpen} 
+      />
     </section>
   );
 };
